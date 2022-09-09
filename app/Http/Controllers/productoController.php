@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\producto;
 use Illuminate\Http\Request;
 
 class productoController extends Controller
@@ -13,7 +14,10 @@ class productoController extends Controller
      */
     public function index()
     {
-        //
+        $producto = producto::all();
+        return response()->json(
+             $producto
+        );
     }
 
     /**
